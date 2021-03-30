@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: try-pod
+  namespace: tech
+  labels:
+    owned: helm
+spec:
+  containers:
+  - name: try-con
+    image: raghav1674/angular-dev-logger:v1
+    ports:
+    - containerPort: {{ .Values.servicePort }}
+      
